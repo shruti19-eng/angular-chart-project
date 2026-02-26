@@ -1,0 +1,74 @@
+@if (chartOptions) {
+
+    <div class="chart-container">
+  
+      <h2 class="chart-title">{{ chartOptions.title }}</h2>
+  
+    
+      @if (chartOptions.type === 'line') {
+        <svg viewBox="0 0 400 220" class="chart-svg">
+  
+        
+          <line x1="0" y1="200" x2="400" y2="200" stroke="#ccc"></line>
+          <line x1="0" y1="0" x2="0" y2="200" stroke="#ccc"></line>
+  
+          <polyline
+            [attr.points]="getLinePoints()"
+            fill="none"
+            stroke="blue"
+            stroke-width="3">
+          </polyline>
+  
+     
+          @for (item of chartOptions.series; track $index; let i = $index) {
+            <circle
+              [attr.cx]="(400 / (chartOptions.series.length - 1)) * i"
+              [attr.cy]="200 - (item.value / maxValue) * 200"
+              r="5"
+              [attr.fill]="item.color">
+            </circle>
+          }
+  
+        </svg>
+      }
+  
+     
+      @if (chartOptions.type === 'column') {
+        <div class="column-wrapper">
+          @for (item of chartOptions.series; track item) {
+            <div class="column"
+                 [style.height.%]="(item.value / maxValue) * 100"
+                 [style.background]="item.color"
+                 [title]="item.name + ' : ' + item.value">
+            </div>
+          }
+        </div>
+      }
+  
+ 
+      @if (chartOptions.type === 'pie') {
+        <svg viewBox="0 0 240 240" class="chart-svg">
+          @for (item of chartOptions.series; track $index; let i = $index) {
+            <path
+              [attr.d]="getPieSlice(i)"
+              [attr.fill]="item.color"
+              class="pie-slice">
+            </path>
+          }
+        </svg>
+      }
+  
+    
+      <div class="legend">
+        @for (item of chartOptions.series; track item) {
+          <div class="legend-item">
+            <span class="legend-color"
+                  [style.background]="item.color"></span>
+            {{ item.name }} ({{ item.value }})
+          </div>
+        }
+      </div>
+  
+    </div>
+  }
+  
