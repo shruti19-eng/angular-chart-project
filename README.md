@@ -12,6 +12,7 @@ The goal of this assignment was to:
 - Follow clean architecture and best practices
 
 ## Project Structure 
+
 src/
  └── app/
       ├── chart/
@@ -21,6 +22,7 @@ src/
       │    └── chart-options.model.ts
       ├── app.ts
       └── app.html
+
       
 ## The component supports: 
 📈 Line Chart 📊 Column Chart 🥧 Pie Chart
@@ -99,13 +101,13 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## 📷 Screenshots
 
 ### Line Chart
-![Line Chart](https://drive.google.com/file/d/1gFN_2__52_sYDd-YKhf_Bz5AgBimun5O/view?usp=drive_link)
+[click here](https://drive.google.com/file/d/1uphUH8v0WGml8x2-mrUBgF5lXiMjWUEG/view?usp=drive_link)
 
 ### Column Chart
-![Column Chart](https://drive.google.com/file/d/16riQ2ZN29PSH62B217YPaVQIUoucbU2C/view?usp=drive_link)
+[Click here](https://drive.google.com/file/d/1cqhBE6ASUKnoj3b7IVKm8iwLOK_P8Mjc/view?usp=drive_link)
 
 ### Pie Chart
-![Pie Chart](https://drive.google.com/file/d/1gFN_2__52_sYDd-YKhf_Bz5AgBimun5O/view?usp=drive_link)
+[Clink here](https://drive.google.com/file/d/1DqQfkqQX01-exN-Ew7lTu6p6tRo58Tke/view?usp=drive_link)
 
 ## Additional Resources
 
